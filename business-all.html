@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Projects | Nyoom-des</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="neon-bg-container">
+    <div class="neon-orb orb-1"></div>
+    <div class="neon-orb orb-2"></div>
+    <div class="neon-orb orb-3"></div>
+    <div class="neon-orb orb-4"></div>
+</div>
+
+<div class="stars-container left"></div>
+<div class="stars-container right"></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top glass-header">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link nav-hover-effect" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-hover-effect" href="aboutme.html">About Me</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-hover-effect" href="myportfolio.html" id="navbarDropdown" aria-expanded="false">
+                        My Portfolio
+                       </a>
+                    <ul class="dropdown-menu glass-card" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item text-white" href="personal-all.html">Personal Project</a></li>
+                        <li><a class="dropdown-item text-white" href="business-all.html">Business Project</a></li>
+                    </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link nav-hover-effect" href="myinspiration.html">My Inspiration</a></li>
+                    <li class="nav-item"><a class="nav-link nav-hover-effect" href="contactme.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+    <div class="glass-section empty-state p-5 text-center">
+        <div class="mb-4" style="font-size: 4rem;">💼</div>
+        <h2 class="text-glow mb-3"><strong>Business Project</strong></h2>
+        <h4 class="mb-3">Mohon maaf ya, untuk sementara masih belum ada🙏</h4>
+        <p class="text-white-50">Saya baru saja lulus dari Dinus Solo dan sedang sangat bersemangat untuk memulai karir profesional. Saya sedang menunggu kesempatan untuk berkolaborasi dalam proyek bisnis Anda!</p>
+        <hr class="my-4" style="border-color: var(--palatinate-blue);">
+        <a href="contactme.html" class="btn-neon">Hubungi Saya untuk Kerjasama</a>
+    </div>
+</div>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="./assets/audios/SeaWishes.mp3" type="audio/mpeg">
+</audio>
+
+<div id="musicController" class="music-controller glass-card">
+    <div class="controller-content">
+        <div class="disk-container">
+            <img src="./assets/images/flower_icon.jpg" id="musicDisk" class="music-disk" alt="Disk">
+        </div>
+        <div class="info-control">
+            <span class="music-title">Sea Wishes</span>
+                <div class="controls d-flex align-items-center gap-2">
+                    <button onclick="prevTrack()" class="btn-control">
+                        <span>⏮</span>
+                    </button>
+                    <button onclick="togglePlay()" id="playBtn" class="btn-control">
+                        <span id="playIcon">⏸</span>
+                    </button>
+                    <button onclick="nextTrack()" class="btn-control">
+                        <span>⏭</span>
+                    </button>
+                </div>
+        </div>
+        <button class="btn-minimize" onclick="minimizeToggle()">—</button>
+    </div>
+    
+    <div class="minimized-trigger" onclick="minimizeToggle()">
+        <img src="./assets/images/flower_icon.jpg" class="music-disk small-disk" id="smallDisk">
+    </div>
+</div>
+
+    <footer class="footer-glass">
+        <div class="container py-4 text-center">
+            <p class="small mb-0">&copy; 2026 Nyoom-des | Web Design by Desila ft. Gemini</p>
+        </div>
+    </footer>
+
+    <div class="video-mascot">
+        <video autoplay muted loop playsinline>
+            <source src="./assets/images/Tragodia.webm" type="video/webm">
+        </video>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

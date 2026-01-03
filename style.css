@@ -1,0 +1,537 @@
+:root {
+    --palatinate-blue: #2A3EF4;
+    --white-blue: #E4E5F2;
+    --blackout: #000000;
+    --black-blue: #0E0F28;
+}
+
+body {
+    background-color: var(--blackout);
+    color: var(--white-blue);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h1, h2, h3, .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-nav {
+    gap: 20px;
+}
+
+.nav-link {
+    padding: 10px 15px !important;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Dropdown Hover */
+@media (min-width: 992px) {
+    .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-item.dropdown .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+    }
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background: rgba(14, 15, 40, 0.9) !important;
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--palatinate-blue) !important;
+}
+
+.dropdown-item {
+    transition: 0.3s;
+    padding: 10px 20px;
+}
+
+.dropdown-item:hover {
+    background: var(--palatinate-blue) !important;
+    color: white !important;
+    padding-left: 25px;
+}
+
+/* Glassmorphism Effect */
+.glass-header {
+    background: rgba(14, 15, 40, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(42, 62, 244, 0.3);
+    padding: 15px 0;
+}
+
+.glass-section, .glass-card {
+    background: rgba(14, 15, 40, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(228, 229, 242, 0.1);
+    border-radius: 20px;
+    transition: all 0.4s ease;
+}
+
+.glass-section:hover {
+    box-shadow: 0 0 30px rgba(42, 62, 244, 0.4);
+    border: 1px solid var(--palatinate-blue);
+}
+
+.glass-card ul li {
+    padding-left: 10px;
+    border-left: 2px solid var(--palatinate-blue);
+}
+
+.glass-card .lead {
+    color: var(--white-blue);
+    font-weight: 300;
+}
+
+/* Social Media Icons */
+.sosmed-links a {
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.sosmed-links a:hover {
+    color: var(--palatinate-blue) !important;
+    transform: translateY(-3px);
+    text-shadow: 0 0 10px var(--palatinate-blue);
+}
+
+.glass-section h4 {
+    margin-top: 10px;
+}
+
+/* Text Glow */
+.text-glow {
+    color: var(--white-blue);
+    text-shadow: 0 0 10px var(--palatinate-blue);
+}
+
+/* Navigation Hover */
+.nav-hover-effect {
+    position: relative;
+    color: var(--white-blue) !important;
+    transition: 0.3s;
+}
+
+.nav-hover-effect::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--palatinate-blue);
+    transition: 0.3s;
+}
+
+.nav-hover-effect:hover::after {
+    width: 100%;
+}
+
+/* Marquee */
+.marquee-container {
+    background: var(--black-blue);
+    padding: 15px 0;
+    overflow: hidden;
+    border-top: 1px solid var(--palatinate-blue);
+    border-bottom: 1px solid var(--palatinate-blue);
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.marquee-wrapper {
+    display: flex;
+    white-space: nowrap;
+    min-width: 100%;
+    animation: infinite-loop 30s linear infinite; 
+}
+
+.marquee-content {
+    display: flex;
+    flex-shrink: 0;
+    padding-right: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: var(--white-blue);
+}
+
+@keyframes infinite-loop {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Hero Carousel Overlay */
+.carousel-inner {
+    height: 500px;
+    position: relative;
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+
+/* Music Controller Container */
+.music-controller {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+    width: 250px;
+    padding: 15px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+.controller-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: opacity 0.3s;
+}
+
+/* Disk Animation */
+.music-disk {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--palatinate-blue);
+    animation: rotateDisk 3s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes rotateDisk {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Minimize Logic */
+.music-controller.is-minimized {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.music-controller.is-minimized .controller-content {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+
+.minimized-trigger {
+    display: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-controller.is-minimized .minimized-trigger {
+    display: flex;
+}
+
+/* Elements Inside */
+.music-title {
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: var(--white-blue);
+}
+
+.btn-control {
+    background: var(--palatinate-blue);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn-minimize {
+    background: transparent;
+    border: none;
+    color: var(--white-blue);
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
+/* Stars Animation */
+.stars-container {
+    position: fixed;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.left { left: 0; }
+.right { right: 0; }
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: fly 5s linear infinite;
+}
+
+@keyframes fly {
+    from { transform: translateY(110vh); opacity: 1; }
+    to { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* Button */
+.btn-neon {
+    padding: 10px 25px;
+    border: 1px solid var(--palatinate-blue);
+    color: var(--white-blue);
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-neon:hover {
+    background: var(--palatinate-blue);
+    box-shadow: 0 0 20px var(--palatinate-blue);
+}
+
+/* Footer */
+.footer-glass {
+    background: rgba(14, 15, 40, 0.9);
+    border-top: 2px solid var(--palatinate-blue);
+    margin-top: auto; 
+    width: 100%;
+}
+
+/* Neon Lights Container */
+.neon-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Base Style Orb */
+.neon-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    transition: all 5s ease-in-out;
+}
+
+.orb-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--palatinate-blue);
+    top: 10%;
+    left: 10%;
+}
+
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: #00d4ff;
+    bottom: 20%;
+    right: 15%;
+}
+
+.orb-3 {
+    width: 250px;
+    height: 250px;
+    background: #1a2a6c;
+    bottom: 10%;
+    left: 30%;
+}
+
+.orb-4 {
+    width: 350px;
+    height: 350px;
+    background: #7DF9FF;
+    top: 40%;
+    right: 30%;
+    opacity: 0.3;
+}
+
+/* Video Mascot Style */
+.video-mascot {
+    position: fixed;
+    bottom: -1px;
+    left: -95px;
+    z-index: 1000;
+    width: 400px;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.video-mascot video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive Adjustment */
+@media (max-width: 768px) {
+    .video-mascot {
+        width: 120px;
+        left: 5px;
+        bottom: 0;
+    }
+}
+
+/* Masonry Layout */
+.portfolio-grid {
+    columns: 3 250px;
+    column-gap: 20px;
+    width: 100%;
+}
+
+.portfolio-item {
+    break-inside: avoid;
+    margin-bottom: 25px;
+}
+
+/* Portfolio Cards */
+.portfolio-card {
+    background: rgba(14, 15, 40, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(228, 229, 242, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+    border: 1px solid var(--palatinate-blue);
+    box-shadow: 0 10px 20px rgba(42, 62, 244, 0.2);
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid rgba(42, 62, 244, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover img {
+    transform: scale(1.03);
+}
+
+/* Typography & Details */
+.portfolio-desc {
+    padding: 15px;
+}
+
+.portfolio-desc h6 {
+    color: var(--white-blue);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.portfolio-desc p {
+    color: rgba(228, 229, 242, 0.8);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Empty State (Business Project) */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    border: 2px dashed rgba(42, 62, 244, 0.3);
+    border-radius: 20px;
+    background: rgba(14, 15, 40, 0.2);
+}
+
+.empty-state h4 {
+    color: var(--white-blue);
+    font-weight: 300;
+}
+
+/* Responsive Adjustment */
+@media (max-width: 576px) {
+    .portfolio-grid {
+        columns: 1;
+    }
+}
+
+/* Icon Circle Animation */
+.social-icon-circle {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(42, 62, 244, 0.1);
+    border: 1px solid rgba(42, 62, 244, 0.3);
+    border-radius: 50%;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+}
+
+/* Icon Hover Effect */
+.glass-section:hover .social-icon-circle, 
+.social-icon-circle:hover {
+    transform: scale(1.1) rotate(10deg);
+    background: var(--palatinate-blue);
+    box-shadow: 0 0 25px var(--palatinate-blue);
+    border-color: var(--palatinate-blue);
+}
+
+/* Icon Animation */
+.social-icon-circle {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .social-icon-circle {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+}
