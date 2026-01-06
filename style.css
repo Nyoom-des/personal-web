@@ -367,7 +367,7 @@ h1, h2, h3, .navbar-brand {
 .orb-2 {
     width: 400px;
     height: 400px;
-    background: #00d4ff;
+    background: #03b2fb;
     bottom: 20%;
     right: 15%;
 }
@@ -375,7 +375,7 @@ h1, h2, h3, .navbar-brand {
 .orb-3 {
     width: 250px;
     height: 250px;
-    background: #1a2a6c;
+    background: #1d97f1;
     bottom: 10%;
     left: 30%;
 }
@@ -383,7 +383,7 @@ h1, h2, h3, .navbar-brand {
 .orb-4 {
     width: 350px;
     height: 350px;
-    background: #7DF9FF;
+    background: #0819f8;
     top: 40%;
     right: 30%;
     opacity: 0.3;
@@ -529,9 +529,62 @@ h1, h2, h3, .navbar-brand {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .social-icon-circle {
+    .glass-header {
+        padding: 10px 0;
+    }
+    .navbar-collapse {
+        background: rgba(14, 15, 40, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        margin-top: 15px;
+        padding: 20px;
+        border: 1px solid rgba(42, 62, 244, 0.2);
+    }
+    h1 { font-size: 2rem !important; }
+    h2 { font-size: 1.5rem !important; }
+    .music-controller {
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+        width: auto;
+        transform: scale(0.9);
+        transform-origin: bottom right;
+    }
+    .music-controller .music-title {
+        font-size: 12px;
+        max-width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    section {
+        padding: 60px 0 !important;
+    }
+    .video-mascot {
         width: 80px;
-        height: 80px;
-        font-size: 2rem;
+        bottom: 80px;
+        right: 10px;
+        opacity: 0.7;
+    }
+    .portfolio-grid {
+        column-count: 1 !important;
+    }
+
+    .card-custom {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .music-controller {
+        padding: 8px 12px;
+    }
+    .btn-control {
+        width: 35px;
+        height: 35px;
     }
 }
