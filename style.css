@@ -166,7 +166,7 @@ h1, h2, h3, .navbar-brand {
 .marquee-content {
     display: flex;
     flex-shrink: 0;
-    padding-right: 100px;
+    padding-right: 200px;
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
     color: var(--white-blue);
